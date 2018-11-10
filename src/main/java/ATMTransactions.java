@@ -75,7 +75,6 @@ public class ATMTransactions extends Thread{
                 }
 
                 update = "Update account SET balance=" +(checkBalance(conn,accountId)-amount) + " WHERE account_id=" + accountId;
-                conn.setAutoCommit(false);
                 stmt = conn.createStatement();
                 stmt.executeUpdate(update);
 //
